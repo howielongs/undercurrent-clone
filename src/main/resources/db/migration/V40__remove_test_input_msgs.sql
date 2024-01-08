@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS msgs_input_test;

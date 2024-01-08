@@ -1,0 +1,18 @@
+package com.undercurrent.shared.utils
+
+import com.undercurrent.shared.types.enums.Environment
+import com.undercurrent.shared.types.enums.Environment.*
+
+
+object SmsConfig {
+
+    fun adminNumbers(environment: Environment): List<String> {
+        return when (environment) {
+
+            PROD, QA, LIVE -> listOf(
+            )
+
+            else -> listOf("")
+        }
+    }
+}

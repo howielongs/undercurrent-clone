@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Terminal Vendor" type="JetRunConfigurationType">
+    <option name="ALTERNATIVE_JRE_PATH" value="adopt-openjdk-14" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <option name="MAIN_CLASS_NAME" value="org.asamk.signal.Main" />
+    <module name="signal-cli.main" />
+    <option name="PROGRAM_PARAMETERS" value="-e dev -r vendor -u +12345637281 terminal" />
+    <shortenClasspath name="NONE" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

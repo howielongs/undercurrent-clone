@@ -1,0 +1,11 @@
+appName=signal-cli
+version=47.4.0
+prev_version=47.3.0
+org.gradle.caching=true
+org.gradle.workers.max=4
+org.gradle.parallel=true
+org.gradle.daemon=true
+group=com.undercurrent
+build_path=build/distributions
+dest_path=~/deploy/
+mob_mnemonic_key_path=~/.keys/mob_mnemonics.key

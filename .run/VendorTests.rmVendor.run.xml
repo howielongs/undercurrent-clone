@@ -1,0 +1,18 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="ShopVendorTests.rmVendor" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+    <module name="signal-cli.test" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="endtoend.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="PACKAGE_NAME" value="endtoend.stages.stage00startstage.usersetup" />
+    <option name="MAIN_CLASS_NAME" value="endtoend.stages.stage00startstage.usersetup.ShopVendorTests" />
+    <option name="METHOD_NAME" value="rmVendor" />
+    <option name="TEST_OBJECT" value="method" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

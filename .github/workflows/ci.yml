@@ -1,0 +1,60 @@
+#name: signal-cli CI
+#
+#on:
+#  push:
+#    branches:
+#      - '**'
+#  pull_request:
+#  workflow_call:
+#
+#permissions:
+#  contents: write # to fetch code (actions/checkout) and submit dependency graph (gradle/gradle-build-action)
+#
+#jobs:
+#  build:
+#
+#    runs-on: ubuntu-latest
+#    strategy:
+#      matrix:
+#        java: [ '17', '21' ]
+#
+#    steps:
+#      - uses: actions/checkout@v4
+#      - name: Set up JDK
+#        uses: actions/setup-java@v3
+#        with:
+#          distribution: 'zulu'
+#          java-version: ${{ matrix.java }}
+#      - name: Setup Gradle
+#        uses: gradle/gradle-build-action@v2
+#        with:
+#          dependency-graph: generate-and-submit
+#      - name: Build with Gradle
+#        run: ./gradlew --no-daemon build
+#      - name: Compress archive
+#        run: gzip -n -9 build/distributions/signal-cli-*.tar
+#      - name: Archive production artifacts
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: signal-cli-archive-${{ matrix.java }}
+#          path: build/distributions/signal-cli-*.tar.gz
+#
+#  build-graalvm:
+#
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - uses: actions/checkout@v4
+#      - uses: graalvm/setup-graalvm@v1
+#        with:
+#          version: 'latest'
+#          java-version: '17'
+#          cache: 'gradle'
+#          github-token: ${{ secrets.GITHUB_TOKEN }}
+#      - name: Build with Gradle
+#        run: ./gradlew --no-daemon nativeCompile
+#      - name: Archive production artifacts
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: signal-cli-native
+#          path: build/native/nativeCompile/signal-cli
